@@ -168,154 +168,30 @@
     <article id="post-flutter" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/flutter/">Dart介绍</a>
+    </h1>
+  
+
+	<!--显示阅读次数-->
+	
+	<!--显示阅读次数完毕-->
+        
+        <a href="/2021/04/20/flutter/" class="archive-article-date">
+  	<time datetime="2021-04-20T12:33:41.886Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>程序入口</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">main()&#123;</span><br><span class="line">    print(&#39;helloworld&#39;);</span><br><span class="line">&#125;</span><br><span class="line">  &#x2F;&#x2F;表示main方法没有返回值</span><br><span class="line">void main()&#123;</span><br><span class="line">   print(&#39;helloworld&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注释</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**&#x2F;</span><br><span class="line">&#x2F;&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F;</span><br></pre></td></tr></table></figure>
-<p>命名规则</p>
-<ol>
-<li>变量名称必须有数字，字母，下划线和美元$组成</li>
-<li>标识符开头不能是数字</li>
-<li>表示夫不能是保留字和关键子</li>
-<li>变量名称区分大小写</li>
-<li>见名知意</li>
-</ol>
-<p>Dart常量</p>
-<pre><code>final 和 const修饰符
-const值不变，一开始就要赋值
-final 可以开始不赋值 但只能赋值一次；而且final不仅有const的编译时常量的特性，最重要的是他运行时永远不改量的量</code></pre>
-<p>Dart常用数据类型</p>
-<pre><code>Number(数值):
-    int
-    double
-String(字符串):
-    String
-Booleans(布尔):
-    bool
-List(数组):
-    在Dart中，数组是列表对象，所以大多数人只是称他们为列表</code></pre>
-<p>字符串</p>
-<pre><code>1.可以使用&#39;&#39;,&quot;&quot;,&quot;&quot;&quot; &quot;&quot;&quot;,表示
-
-2.字符串的拼接
-String str1=&#39;你好&#39;;
-String str2=&#39;dart&#39;;
-    (1)print(&quot;$str1 $str2&quot;);
-    (2)print(str1 + &quot; &quot;+str2);</code></pre>
-<p>List列表</p>
-<pre><code>1.
-var li=[&#39;aa&#39;,&#39;bb&#39;,&#39;cc&#39;];
-print(l1);
-print(li.length);
-print(li[1]);//bb
-
-2.
-var l2=new List();
-l2.add(&#39;张三&#39;);
-l2.add(&#39;李四&#39;);
-l2.add(&#39;王五&#39;);
-print(l2[1]);//李四
-
-3.定义List指定数据类型
-var l3=new List&lt;String&gt;();</code></pre>
-<p>Maps字典</p>
-<pre><code>1.定义方式
-var person=&#123;
-    &quot;name&quot;:&quot;张三&quot;,
-    &quot;age&quot;:20
-&#125;;
-引用方式
-print(person[&quot;name&quot;]);
-
-2.定义方式
-var p=new Map();
-p[&quot;name&quot;]=&quot;李四&quot;;
-p[&quot;age&quot;]=&quot;22&quot;;
-引用方式
-print(p);</code></pre>
-<p>Dart判断数据类型</p>
-<pre><code>is 关键词来判断数据类型
-var str=&quot;123&quot;;
-if(str is String)&#123;
-    print(&#39;是string类型&#39;);
-&#125;else if(str is int)&#123;
-    print(&#39;int&#39;);
-&#125;else&#123;
-    print(&#39;其他类型&#39;)；
-&#125;</code></pre>
-<p>Dart运算符</p>
-<p>算数运算符大部分没啥差别</p>
-<pre><code>print(a~/b);//取整</code></pre>
-<p>关系运算符</p>
-<pre><code>没区别(java)</code></pre>
-<p>逻辑运算符</p>
-<pre><code>! 取反
-&amp;&amp;并且：全为true的话值为true
-否则为false
-||或者：全为false的话值为false
-否则为true</code></pre>
-<p>赋值运算符</p>
-<pre><code>=
-??=
-
-b??=23;//表示如果b为空的话，把23赋值给b</code></pre>
-<p>复合赋值运算符</p>
-<pre><code>+=
--=
-*=
-/=
-%= 
-~/=</code></pre>
-<p>条件表达式</p>
-<pre><code>if esle
-switch case
-
-var sex = &quot;男&quot;;
-switch(sex)&#123;
-    case &quot;男&quot;:
-      语句
-    break;
-    ...
-    default:
-    print(&quot;传入参数错误???&quot;);
-    break;
-&#125;
-
-三目运算符
-
-bool flag=true;
-String c= flag?&#39;true&#39;:&#39;false&#39;;
-
-??运算符
-如果变量值为空就把值赋给变量
-var a;
-var b=a??10;
-print(b);//b=10
-
-var a=22;
-var b=a??10;
-print(b);//b=22</code></pre>
-<p>Dart类型转换</p>
-<pre><code>Number类型转换成String类型
-    toString()
-String类型转换成Number类型
-    parse()
-
-String str=&#39;123&#39;;
-var Num=int.parse(str);
-
-其他类型转换称Booleans类型
-isEmpty:判断字符串是否为空
-isNaN:判断是否为数字
-var str=&quot;xxx&quot;;
-if(str.isEmpty)&#123;
-    print(&#39;str空&#39;);
-&#125;else&#123;
-    print(&#39;str不为空&#39;);
-&#125;</code></pre>
-
+        <h1 id="Dart"><a href="#Dart" class="headerlink" title="Dart"></a>Dart</h1>
+        
+          <a class="article-more-a" href="/2021/04/20/flutter/#more">点这 >></a>
+        
       
 
       
